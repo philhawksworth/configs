@@ -25,7 +25,7 @@ function gc {
     gs
 }
 
-
+# TheTeam server helpers
 alias prod2='ssh philhawksworth@dig-prod-02.theteam2004.lan'
 alias dev7='ssh philhawksworth@dig-dev-07'
 alias labs='ssh philhawksworth@labs.theteamdigital.com'
