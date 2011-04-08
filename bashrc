@@ -26,6 +26,27 @@ function gc {
 }
 
 
+# SSH helpers for The Team server resources
 alias prod2='ssh philhawksworth@dig-prod-02.theteam2004.lan'
 alias dev7='ssh philhawksworth@dig-dev-07'
 alias labs='ssh philhawksworth@labs.theteamdigital.com'
+
+
+# Django virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
+_virtualenvs ()
+{
+    local cur="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=( $(compgen -W "`ls $WORKON_HOME`" -- ${cur}) )
+}
+
+complete -o default -o nospace -F _virtualenvs workon
+complete -o default -o nospace -F _virtualenvs rmvirtualenv
+
+alias pym='python manage.py'
+pymt ()
+{
+    python manage.py $1 --settings=settings_test
+}
