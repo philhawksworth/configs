@@ -4,6 +4,7 @@ alias la='ls -la'
 alias m='mate'
 alias ff='open -a /Applications/Firefox.app "$@"'
 alias ch='open -a /Applications/Google\ Chrome.app "$@"'
+alias wget="curl -O"
 
 #  Instant http server for local sharing
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
@@ -29,7 +30,9 @@ function gc {
 # SSH helpers for The Team server resources
 alias prod2='ssh philhawksworth@dig-prod-02.theteam2004.lan'
 alias dev7='ssh philhawksworth@dig-dev-07'
-alias labs='ssh philhawksworth@labs.theteamdigital.com'
+
+
+
 
 
 # Django virtualenv
@@ -50,3 +53,6 @@ pymt ()
 {
     python manage.py $1 --settings=settings_test
 }
+
+# Path management
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH" 
